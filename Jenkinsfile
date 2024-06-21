@@ -15,10 +15,20 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                checkout scm
+                script {
+                    checkout([
+                        $class: 'GitSCM',
+                        branches: [[name: 'develop']],
+                        doGenerateSubmoduleConfigurations: false,
+                        extensions: [],
+                        userRemoteConfigs: [[
+                            url: 'git@github.com/Ashwanthsri/angular-todo.git',
+                            credentialsId: 'github-ssh-key'
+                        ]]
+                    ])
+                }
             }
         }
-
         stage('Install Dependencies') {
             steps {
                 script {
