@@ -10,6 +10,7 @@ pipeline {
         EB_ENVIRONMENT_NAME = 'Angular-todo-env'
         S3_BUCKET = 'elasticbeanstalk-us-east-1-Angular-todo'
         NODEJS_VERSION = '22.3.0' // Change to the desired Node.js version
+        GIT_CREDENTIALS_ID = 'github-ssh-key' // The ID of the SSH credentials in Jenkins
     }
 
     stages {
@@ -23,7 +24,7 @@ pipeline {
                         extensions: [],
                         userRemoteConfigs: [[
                             url: 'git@github.com/Ashwanthsri/angular-todo.git',
-                            credentialsId: 'github-ssh-key'
+                            credentialsId: "${env.GIT_CREDENTIALS_ID}"
                         ]]
                     ])
                 }
