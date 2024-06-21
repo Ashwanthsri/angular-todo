@@ -8,7 +8,7 @@ pipeline {
         AWS_REGION = 'us-east-1'
         EB_APPLICATION_NAME = 'Angular-todo'
         EB_ENVIRONMENT_NAME = 'Angular-todo-env'
-        S3_BUCKET = 'elasticbeanstalk-us-east-1-451474896501'
+        S3_BUCKET = 'elasticbeanstalk-us-east-1-Angular-todo'
         NODEJS_VERSION = '22.3.0' // Change to the desired Node.js version
     }
 
