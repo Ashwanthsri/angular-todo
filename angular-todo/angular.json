@@ -17,14 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "styles": [
-        "src/styles.scss",
-        "node_modules/bootstrap/scss/bootstrap.scss",
-        "node_modules/bootstrap-icons/font/bootstrap-icons.scss"
-      ],
-      "scripts": [
-        "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
-            "outputPath": "dist/angular-todo",
+            "outputPath": "dist/angular-todo", // <-- Correct placement of outputPath
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -39,7 +32,9 @@
               "node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/bootstrap-icons/font/bootstrap-icons.scss"
             ],
-            "scripts": [ "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"]
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ]
           },
           "configurations": {
             "production": {
